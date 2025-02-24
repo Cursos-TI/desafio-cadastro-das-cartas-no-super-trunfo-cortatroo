@@ -6,17 +6,16 @@
 // Siga os comentários para implementar cada parte do desafio.
 
 int main() {
-    char estado;
+    char estado[10];
     char codigoCarta[4];
     char nomeCidade[50];
-    int populacao;
-    float area;
-    float pib;
-    int pontosTuristicos;
+    int populacao, pontosTuristicos;
+    float area, pib;
     
     printf("Insira os dados da Carta 1:\n");
     printf("Insira o Estado (A-H):");
-    scanf("%c", &estado);
+    scanf("%s", &estado);
+    printf("Estado: %s\n", estado);
     printf("Codigo da Carta (ex: A01):");
     scanf("%s", &codigoCarta);
     printf("Nome da Cidade: ");
@@ -30,14 +29,11 @@ int main() {
     printf("Numero de Pontos Turisticos: ");
     scanf("%d", &pontosTuristicos);
 
-    printf("Essas foram as informações cadastradas para Carta 1: %s\n");
-    printf("Estado: %c\n", estado);
-    printf("Codigo da Carta: %s\n", codigoCarta);
-    printf("Nome da Cidade: %s\n", nomeCidade);
-    printf("Populacao: %d\n", populacao);
-    printf("Area: %.2f km²\n", area);
+    printf("Estado: %s\nCódigo da Carta: %s\nNome da Cidade: %s\nPopulação: %d\n", estado, codigoCarta, nomeCidade, populacao);
+   
+    /*printf("Area: %.2f km²\n", area);
     printf("PIB: %.2f\n", pib);
-    printf("Numero de Pontos Turisticos: %d\n", pontosTuristicos);
+    printf("Numero de Pontos Turisticos: %d\n", pontosTuristicos);*/
 
 
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
