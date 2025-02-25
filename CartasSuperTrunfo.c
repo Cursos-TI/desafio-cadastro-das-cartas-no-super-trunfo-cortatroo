@@ -4,23 +4,23 @@
 // Tema 1 - Cadastro das Cartas
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 // Siga os comentários para implementar cada parte do desafio.
+
+
 // INICIANDO AS VARIAVEIS E INFORMANDO QUAL O TIPO DE DADOS
 int main() {
-    char estado[10];
-    char codigoCarta[4];
-    char nomeCidade[50];
-    int populacao, pontosTuristicos;
-    float area, pib, densidade, pibpercapta;
+    char estado[10], estado2[10];
+    char codigoCarta[4], codigoCarta2[4];
+    char nomeCidade[50], nomeCidade2[50];
+    unsigned long int populacao, populacao2;
+    int pontosTuristicos, pontosTuristicos2;
+    float area, pib, area2, pib2;
+    float densidade, pibpercapta, densidade2, pibpercapta2;
+    float superpoder, superpoder2;
 
-    char estado2[10];
-    char codigoCarta2[4];
-    char nomeCidade2[50];
-    int populacao2, pontosTuristicos2;
-    float area2, pib2, densidade2, pibpercapta2;
-    
 //UTILIZANDO O COMANDO PRINTF PARA SOLICITAR A INSERÇÃO DOS DADOS QUE SERÃO
 //GUARDADOS NAS VARIAVEIS CRIADAS PARA A CARTA 1. O COMANDO SCANF É PARA ARMAZENAR
 //OS DADOS INSERIDOS PELO USUÁRIO.
+    printf("====================***====================\n");
     printf("Insira os dados da Carta 1:\n");
     printf("Insira o Estado (A-H): ");
     scanf("%s", &estado);
@@ -29,7 +29,7 @@ int main() {
     printf("Nome da Cidade: ");
     scanf("%s", &nomeCidade);
     printf("Populacao: ");
-    scanf("%d", &populacao);
+    scanf("%ld", &populacao);
     printf("Area (em km²): ");
     scanf("%f", &area);
     printf("PIB: ");
@@ -37,10 +37,10 @@ int main() {
     printf("Numero de Pontos Turisticos: ");
     scanf("%d", &pontosTuristicos);
     
-
 //UTILIZANDO O COMANDO PRINTF PARA SOLICITAR A INSERÇÃO DOS DADOS QUE SERÃO
 //GUARDADOS NAS VARIAVEIS CRIADAS PARA A CARTA 2. O COMANDO SCANF É PARA ARMAZENAR
 //OS DADOS INSERIDOS PELO USUÁRIO.
+    printf("====================***====================\n");
     printf("Insira os dados da Carta 2:\n");
     printf("Insira o Estado (A-H): ");
     scanf("%s", &estado2);
@@ -49,7 +49,7 @@ int main() {
     printf("Nome da Cidade: ");
     scanf("%s", &nomeCidade2);
     printf("Populacao: ");
-    scanf("%d", &populacao2);
+    scanf("%ld", &populacao2);
     printf("Area (em km²): ");
     scanf("%f", &area2);
     printf("PIB: ");
@@ -65,9 +65,15 @@ int main() {
     pibpercapta = pib / populacao;
     pibpercapta2 = pib2 / populacao2;
 
+    //CALCULO E ALTERAÇÃO NO TIPO DE DADOS PARA CHEGAR AO VALOR DO SUPER PODER
+    superpoder = (float)(area + pib + populacao + pibpercapta + pontosTuristicos - densidade); // Calculo do superpoder da carta 1 
+    superpoder2 = (float)(area2 + pib2 + populacao2 + pibpercapta2 + pontosTuristicos2 - densidade2); // Calculo do superpoder da carta 2 
+
 //UTILIZANDO O COMANDO PRINTF PARA APRESENTAR OS DADOS DA CARTA 1, INSERIDOS PELO USUÁRIO
 //NESSA PARTE ESTOU COLOCANDO O TEXTO DE APRESENTAÇÃO SEGUIDOS DOS VALORES ARMAZENADOS
 //NAS VARIAVEIS QUE SAO INDICADAS NO CÓDIGO.
+    printf("\n");
+    printf("====================***====================\n");
     printf("Informações da Carta 01:\n");
     printf("Estado: %s\n", estado);
     printf("Código da Carta 01: %s\n",codigoCarta);
@@ -80,10 +86,12 @@ int main() {
 //CALCULOS DAS NOVAS VARIÁVEIS DE DENSIDADE DE PIB PER CAPTA.
     printf("Densidade Populacional (hab/km²): %.2f\n", densidade);
     printf("PIB per Capta (R$): %.2f\n", pibpercapta);
+    printf("Super Poder: %.2f\n", superpoder);
 
 
-    
 //APRESENTAÇÃO DAS INFORMAÇÕES DA CARTA 2
+    printf("\n");
+    printf("====================***====================\n");
     printf("Informações da Carta 02:\n");
     printf("Estado: %s\n", estado2);
     printf("Código da Carta 01: %s\n",codigoCarta2);
@@ -96,20 +104,24 @@ int main() {
 //CALCULOS DAS NOVAS VARIÁVEIS DE DENSIDADE DE PIB PER CAPTA.
     printf("Densidade Populacional (hab/km²): %.2f\n", densidade2);
     printf("PIB per Capta (R$): %.2f\n", pibpercapta2);
+    printf("Super Poder: %.2f\n", superpoder2);
+    printf("\n");
+    printf("====================***====================\n");
+    printf("\n");
+    printf("AGORA IREMOS COMPARAR AS DUAS CARTAS\n");
 
 
+//COMPARAÇÃO ENTRE AS CARTAS
 
-
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
+    printf("População: %d\n", populacao > populacao2); // Comparação da população da carta 1 com a população da carta 2
+    printf("Área: %d\n", area > area2); // Comparação da área da carta 1 com a área da carta 2
+    printf("PIB: %d\n", pib > pib2); // Comparação do PIB da carta 1 com o PIB da carta 2
+    printf("Pontos Turísticos: %d\n", pontosTuristicos > pontosTuristicos2); // Comparação da quantidade de pontos turísticos da carta 1 com a quantidade de pontos turísticos da carta 2
+    printf("Densidade Populacional: %d\n", densidade > densidade2); // Comparação da densidade populacional da carta 1 com a densidade populacional da carta 2
+    printf("PIB per Capita: %d\n", pibpercapta > pibpercapta2); // Comparação do PIB per capita da carta 1 com o PIB per capita da carta 2
+    printf("Super Poder: %d\n", superpoder > superpoder2); // Comparação do superpoder da carta 1 com o superpoder da carta 2
+    printf("\n");
+    printf("=============== FIM =============\n");
     
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
-
     return 0;
 }
