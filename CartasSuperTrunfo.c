@@ -10,13 +10,13 @@ int main() {
     char codigoCarta[4];
     char nomeCidade[50];
     int populacao, pontosTuristicos;
-    float area, pib;
+    float area, pib, densidade, pibpercapta;
 
     char estado2[10];
     char codigoCarta2[4];
     char nomeCidade2[50];
     int populacao2, pontosTuristicos2;
-    float area2, pib2;
+    float area2, pib2, densidade2, pibpercapta2;
     
 //UTILIZANDO O COMANDO PRINTF PARA SOLICITAR A INSERÇÃO DOS DADOS QUE SERÃO
 //GUARDADOS NAS VARIAVEIS CRIADAS PARA A CARTA 1. O COMANDO SCANF É PARA ARMAZENAR
@@ -37,6 +37,7 @@ int main() {
     printf("Numero de Pontos Turisticos: ");
     scanf("%d", &pontosTuristicos);
     
+
 //UTILIZANDO O COMANDO PRINTF PARA SOLICITAR A INSERÇÃO DOS DADOS QUE SERÃO
 //GUARDADOS NAS VARIAVEIS CRIADAS PARA A CARTA 2. O COMANDO SCANF É PARA ARMAZENAR
 //OS DADOS INSERIDOS PELO USUÁRIO.
@@ -56,7 +57,14 @@ int main() {
     printf("Numero de Pontos Turisticos: ");
     scanf("%d", &pontosTuristicos2);
 
-    
+    //APÓS O USUÁRIO ATRIBUIR VALORES AS VARIÁVEIS, ESSES VALORES
+    //ESTÃO SENDO UTILIZADOS PARA REALIZAR O CALCULO DE DENSIDADE POPULACIONAL
+    // E DE PIB PER CAPTA.
+    densidade = populacao / area;
+    densidade2 = populacao2 / area2;
+    pibpercapta = pib / populacao;
+    pibpercapta2 = pib2 / populacao2;
+
 //UTILIZANDO O COMANDO PRINTF PARA APRESENTAR OS DADOS DA CARTA 1, INSERIDOS PELO USUÁRIO
 //NESSA PARTE ESTOU COLOCANDO O TEXTO DE APRESENTAÇÃO SEGUIDOS DOS VALORES ARMAZENADOS
 //NAS VARIAVEIS QUE SAO INDICADAS NO CÓDIGO.
@@ -65,9 +73,15 @@ int main() {
     printf("Código da Carta 01: %s\n",codigoCarta);
     printf("Nome da cidade: %s\n", nomeCidade);
     printf("População: %d\n", populacao);
-    printf("Area (em km²): %f\n",area);
-    printf("PIB: %f\n", pib);
+    printf("Area (em km²): %.2f\n",area);
+    printf("PIB: %.2f\n", pib);
     printf("Número de Pontos Turisticos: %d\n", pontosTuristicos);
+//UTILIZANDO O COMANDO PRINTF PARA MOSTRAR OS VALORES OBTIDOS APÓS OS
+//CALCULOS DAS NOVAS VARIÁVEIS DE DENSIDADE DE PIB PER CAPTA.
+    printf("Densidade Populacional (hab/km²): %.2f\n", densidade);
+    printf("PIB per Capta (R$): %.2f\n", pibpercapta);
+
+
     
 //APRESENTAÇÃO DAS INFORMAÇÕES DA CARTA 2
     printf("Informações da Carta 02:\n");
@@ -75,9 +89,16 @@ int main() {
     printf("Código da Carta 01: %s\n",codigoCarta2);
     printf("Nome da cidade: %s\n", nomeCidade2);
     printf("População: %d\n", populacao2);
-    printf("Area (em km²): %f\n",area2);
-    printf("PIB: %f\n", pib2);
+    printf("Area (em km²): %.2f\n",area2);
+    printf("PIB: %.2f\n", pib2);
     printf("Número de Pontos Turisticos: %d\n", pontosTuristicos2);
+//UTILIZANDO O COMANDO PRINTF PARA MOSTRAR OS VALORES OBTIDOS APÓS OS
+//CALCULOS DAS NOVAS VARIÁVEIS DE DENSIDADE DE PIB PER CAPTA.
+    printf("Densidade Populacional (hab/km²): %.2f\n", densidade2);
+    printf("PIB per Capta (R$): %.2f\n", pibpercapta2);
+
+
+
 
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
